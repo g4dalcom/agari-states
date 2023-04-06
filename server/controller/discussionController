@@ -14,7 +14,7 @@ const discussitonController = {
 
     if (data.length > 0) {
       return res.status(200).json(data[0]);
-    } else return req.status(404).json('데이터가 존재하지 않습니다.');
+    } else return res.status(404).json('데이터가 존재하지 않습니다.');
   },
 };
 

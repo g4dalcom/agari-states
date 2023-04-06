@@ -73,13 +73,13 @@ header {
 
 .navigation h1 {
   position: relative;
-  left: 100px;
+  left: 40px;
   bottom: 5px;
 }
 
 .navigation h1 img {
-  width: 48px;
-  height: 48px;
+  width: 35px;
+  height: 35px;
   position: relative;
   top: 5px;
   right: 7px;
@@ -414,7 +414,7 @@ figure .img_wrap .motion-cat {
   z-index: 999;
   transform: translate(-50%, -50%);
   left: 50%;
-  top: 28%;
+  top: 50%;
   background-color: #fede29;
   opacity: 1;
   visibility: visible;
@@ -543,6 +543,11 @@ footer {
 .footer_copy {
   position: relative;
   left: 40%;
+}
+
+.footer_p,
+.footer_flex strong {
+  margin-left: 40px;
 }
 
 /* ============ 기타 ============ */
