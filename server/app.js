@@ -1,13 +1,12 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const jsonParser = express.json();
 
 const port = 3000;
-const discussionsRouter = require('../server/router/router');
+const discussionsRouter = require('./router/router');
 
 app.use(cors());
-app.unsubscribe('/', discussionsRouter);
+app.use('/', discussionsRouter);
 
 const server = app.listen(port, () => {
   console.log(`서버가 돌아간다~!! | http://localhost:${port}`);
