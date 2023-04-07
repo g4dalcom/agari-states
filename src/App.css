@@ -238,7 +238,7 @@ header {
   margin-top: 15px;
 }
 
-.pagination_container a,
+.pagination_container button,
 .pagination-button {
   color: black;
   float: left;
@@ -246,6 +246,8 @@ header {
   text-decoration: none;
   font-size: 20px;
   cursor: pointer;
+  border: none;
+  background-color: white;
 }
 
 .pagination_container .active {
@@ -254,13 +256,14 @@ header {
   border-radius: 50%;
 }
 
-.pagination_container a:hover:not(.active) {
+.pagination_container button:hover:not(.active) {
   background-color: #d4d3cc;
   border-radius: 50%;
 }
 
 .pagination-button {
   background-color: transparent;
+  border: none;
 }
 
 /* ============ 메인화면 텍스트 ============ */
