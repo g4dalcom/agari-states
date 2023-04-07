@@ -1,15 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Discussion from './Discussion';
 import InputForm from './InputForm';
+import Detail from './Detail';
+import { Routes, Route } from 'react-router-dom';
 
 const Main = () => {
   const [modal, setModal] = useState(false);
+  const [discussion, setDiscussion] = useState([]);
+  const [detailStatus, setDetailStatus] = useState(2);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [detailDiscussion, setDetailDiscussion] = useState();
 
   const handleModal = () => {
     if (!modal) {
       setModal(true);
     }
   };
+
+  /* 전체 목록 불러오기 */
+  useEffect(() => {
+    fetch('http://localhost:3000/')
+      .then((res) => res.json())
+      .then((data) => setDiscussion(data));
+  }, [pageNumber]);
+
+  /* 특정 게시물 불러오기 */
+  useEffect(() => {
+    fetch(`http://localhost:3000/${detailStatus}`)
+      .then((res) => res.json())
+      .then((data) => setDetailDiscussion(data));
+  }, [detailStatus]);
+
+  console.log(detailStatus);
+  console.log(detailDiscussion);
 
   return (
     <>
@@ -64,7 +87,20 @@ const Main = () => {
         </div>
       </section>
       <InputForm modalControl={modal} bgControl={setModal} />
-      <Discussion />
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <Discussion
+              pageNumber={pageNumber}
+              discussion={discussion}
+              setDetailStatus={setDetailStatus}
+              setPageNumber={setPageNumber}
+            />
+          }
+        />
+        <Route path='/:id' element={<Detail item={detailDiscussion} />} />
+      </Routes>
     </>
   );
 };

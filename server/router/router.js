@@ -1,9 +1,10 @@
 const { discussitonController } = require('../controller/discussionController');
-const { findAll, findById } = discussitonController;
+const { findAll, findById, create } = discussitonController;
 const express = require('express');
 const router = express.Router();
 
 router.get('/', findAll);
-router.get('discussion/:id', findById);
+router.get('/:id', findById);
+router.post('/', create);
 
 module.exports = router;

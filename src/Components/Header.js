@@ -9,7 +9,7 @@ const Header = () => {
       <section className='header'>
         <div className='navigation'>
           <h1>
-            <a href='http://localhost:3000/'>
+            <a href='/'>
               <img src={logoImg} alt='logo' />
               AGARI STATES
             </a>

@@ -1,6 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const InputForm = ({ modalControl, bgControl }) => {
+  const [discuss, setDiscuss] = useState({
+    title: '',
+    author: '',
+    story: '',
+  });
+  const handleValueChange = (e) => {
+    setDiscuss({
+      ...discuss,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const submitHandler = () => {
+    fetch('http://localhost:3000/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(discuss),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .then(handleBg)
+      .then(confirmAndReload);
+  };
+
+  const confirmAndReload = () => {
+    window.alert('정상적으로 등록되었습니다.');
+    window.location.reload();
+  };
+
   const handleBg = () => {
     bgControl(false);
   };
@@ -17,12 +48,13 @@ const InputForm = ({ modalControl, bgControl }) => {
           modalControl === false ? `form__container hide` : `form__container`
         }
       >
-        <form action='' method='get' class='form'>
+        <form action='/' method='post' className='form'>
           <div className='form__input--wrapper'>
             <h2 className='tit'>작성하기 🖊</h2>
             <div className='input-box'>
               <div className='form__input--name'>
                 <input
+                  onChange={(e) => handleValueChange(e)}
                   type='text'
                   name='author'
                   id='author'
@@ -32,6 +64,7 @@ const InputForm = ({ modalControl, bgControl }) => {
               </div>
               <div className='form__input--title'>
                 <input
+                  onChange={(e) => handleValueChange(e)}
                   type='text'
                   name='title'
                   id='title'
@@ -41,6 +74,7 @@ const InputForm = ({ modalControl, bgControl }) => {
               </div>
               <div className='form__textbox'>
                 <textarea
+                  onChange={(e) => handleValueChange(e)}
                   id='story'
                   name='story'
                   placeholder='질문을 작성해주세요'
@@ -50,7 +84,11 @@ const InputForm = ({ modalControl, bgControl }) => {
             </div>
           </div>
           <div className='form__submit'>
-            <input type='submit' value='작성완료' />
+            <input
+              onClick={() => submitHandler()}
+              type='button'
+              value='작성완료'
+            />
           </div>
         </form>
       </section>

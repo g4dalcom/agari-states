@@ -4,7 +4,7 @@ const { JSDOM } = require('jsdom');
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window);
 
-module.exports.agoraStatesDiscussions = [
+module.exports = [
   {
     id: 45,
     createdAt: '2022-05-16T01:02:17Z',

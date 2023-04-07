@@ -60,7 +60,7 @@ header {
 /* ============ 메인 컨테이너 ============ */
 .main_container {
   position: relative;
-  height: 720px;
+  height: 620px;
   background: #fede29;
 }
 
@@ -271,7 +271,7 @@ header {
 .text_container {
   z-index: 1;
   position: absolute;
-  top: 170px;
+  top: 130px;
   left: 50%;
   width: 1200px;
   margin-left: -650px;
@@ -320,9 +320,9 @@ header {
 
 figure {
   position: absolute;
-  left: 50%;
+  left: 55%;
   margin-left: -43px;
-  top: 92px;
+  top: 52px;
 }
 
 figure .motion-notebook {
@@ -551,6 +551,154 @@ footer {
 .footer_p,
 .footer_flex strong {
   margin-left: 40px;
+}
+
+/* ============ 상세페이지 ============ */
+.detail_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail_container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  right: -5%;
+}
+
+.detail_info {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  font-weight: 600;
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.025em;
+  color: #000;
+}
+
+.detail_id {
+  margin-left: 50px;
+}
+
+.detail_author {
+  margin-right: 50px;
+  position: relative;
+  top: 5px;
+  margin-left: 10px;
+}
+
+.detail_createdAt {
+  margin-right: 20px;
+  position: relative;
+  top: 5px;
+}
+
+.detail_answered {
+  width: 75px;
+  position: relative;
+  left: 70%;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+}
+
+.author_info {
+  display: flex;
+}
+
+.author_info img {
+  width: 30px;
+  height: 30px;
+}
+
+.detail_answered {
+  background-color: #fede29;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.detail_content {
+  width: 80%;
+  height: 300px;
+  border: 1px solid blue;
+  text-align: center;
+  margin-top: 20px;
+
+  font-weight: 600;
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.025em;
+  color: #000;
+}
+
+.detail_btn {
+  display: flex;
+  width: 80%;
+  justify-content: left;
+  position: relative;
+  bottom: 10px;
+}
+
+.backBtn {
+  display: inline-block;
+  margin-top: 20px;
+  width: 120px;
+  border-radius: 40px;
+  background: white;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -0.025em;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid black;
+  margin-right: 15px;
+}
+
+.linkTo {
+  display: inline-block;
+  margin-top: 20px;
+  width: 120px;
+  border-radius: 40px;
+  background: #222;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -0.025em;
+  color: #fff !important;
+  text-align: center;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.backBtn:hover {
+  background-color: #fede29;
+  color: #000;
+}
+
+.linkTo:hover {
+  background-color: #fede29;
+  color: #000 !important;
+  border: 2px solid black;
 }
 
 /* ============ 기타 ============ */
