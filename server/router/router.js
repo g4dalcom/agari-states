@@ -4,6 +4,6 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', findAll);
-router.get('/:id', findById);
+router.get('discussion/:id', findById);
 
 module.exports = router;
