@@ -6,6 +6,7 @@ const InputForm = ({ modalControl, bgControl }) => {
     author: '',
     story: '',
   });
+
   const handleValueChange = (e) => {
     setDiscuss({
       ...discuss,
@@ -44,9 +45,7 @@ const InputForm = ({ modalControl, bgControl }) => {
         style={{ display: modalControl ? 'block' : 'none' }}
       ></div>
       <section
-        className={
-          modalControl === false ? `form__container hide` : `form__container`
-        }
+        className={modalControl ? `form__container` : `form__container hide`}
       >
         <form action='/' method='post' className='form'>
           <div className='form__input--wrapper'>

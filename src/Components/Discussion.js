@@ -21,9 +21,8 @@ const Discussion = ({
           {/* 전체 목록 중 pageNumber에 따라 9개씩 불러오기 */}
           {discussion.slice(startIndex, endIndex).map((el) => {
             return (
-              <Link to={`/${el.id}`}>
+              <Link to={`/${el.id}`} key={el.id}>
                 <li
-                  key={el.id}
                   onClick={() => setDetailStatus(el.id)}
                   className='discussion__container'
                 >

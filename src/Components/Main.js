@@ -31,9 +31,6 @@ const Main = () => {
       .then((data) => setDetailDiscussion(data));
   }, [detailStatus]);
 
-  console.log(detailStatus);
-  console.log(detailDiscussion);
-
   return (
     <>
       <section className='main'>
@@ -67,7 +64,6 @@ const Main = () => {
                   className='motion-esc'
                   src='https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbJ5DdW%2Fbtr2PSfGzTg%2FgiZxDBQAeR7yE5dr2aQLm0%2Fimg.png'
                   alt='img'
-                  s
                 />
               </div>
             </div>
