@@ -14,7 +14,7 @@ const InputForm = ({ modalControl, bgControl }) => {
     });
   };
 
-  const submitHandler = () => {
+  const handleSubmit = () => {
     fetch('http://localhost:3000/', {
       method: 'POST',
       headers: {
@@ -24,8 +24,8 @@ const InputForm = ({ modalControl, bgControl }) => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data))
-      .then(handleBg)
-      .then(confirmAndReload);
+      .then(confirmAndReload)
+      .then(handleBg);
   };
 
   const confirmAndReload = () => {
@@ -84,7 +84,7 @@ const InputForm = ({ modalControl, bgControl }) => {
           </div>
           <div className='form__submit'>
             <input
-              onClick={() => submitHandler()}
+              onClick={() => handleSubmit()}
               type='button'
               value='작성완료'
             />

@@ -16,15 +16,17 @@ const discussitonController = {
   },
 
   create: (req, res) => {
+    let { title, author, bodyHTML } = req.body;
+
     let reqData = {
       id: discussionsData.length + 5,
       createdAt: new Date(),
       updatedAt: new Date(),
-      title: req.body.title,
+      title,
       url: '/',
-      author: req.body.author,
+      author,
       answer: '',
-      bodyHTML: req.body.story,
+      bodyHTML,
       avatarUrl:
         'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbiRVcH%2Fbtr2TBYLBNw%2FfsZv1m33WPzkop4idkL1m1%2Fimg.png',
     };
